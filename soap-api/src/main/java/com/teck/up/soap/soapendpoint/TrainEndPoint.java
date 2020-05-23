@@ -2,7 +2,7 @@ package com.teck.up.soap.soapendpoint;
 
 import com.reseration.xml.*;
 import com.teck.up.soap.UIModel.TrainDTO;
-import com.teck.up.soap.services.impl.TrainServiceImpl;
+import com.teck.up.soap.service.impl.TrainServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;

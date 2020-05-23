@@ -1,10 +1,10 @@
-package com.teck.up.soap.services.impl;
+package com.teck.up.soap.service.impl;
 
 import com.reseration.xml.AddClientRequest;
 import com.reseration.xml.RemoveClientRequest;
 import com.reseration.xml.UpdateClientRequest;
 import com.teck.up.soap.UIModel.ClientDTO;
-import com.teck.up.soap.services.ClientService;
+import com.teck.up.soap.service.ClientService;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import java.util.List;
 @Service("ClientService")
 public class ClientServiceImpl implements ClientService {
 
-    private static final String PATH_API_TRAIN = "http://localhost:8080/api/client/";
+    private static final String PATH_API_TRAIN = "http://localhost:8082/api/client/";
 
     @Override
     public List<ClientDTO> getRequestAllClient() {

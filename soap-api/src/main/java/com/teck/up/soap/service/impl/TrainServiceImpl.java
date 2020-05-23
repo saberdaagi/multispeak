@@ -1,13 +1,12 @@
-package com.teck.up.soap.services.impl;
+package com.teck.up.soap.service.impl;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.reseration.xml.AddTrainRequest;
 import com.reseration.xml.RemoveTrainRequest;
 import com.reseration.xml.SearchedTrainRequest;
 import com.reseration.xml.UpdateTrainRequest;
 import com.teck.up.soap.UIModel.TrainDTO;
-import com.teck.up.soap.services.TrainService;
+import com.teck.up.soap.service.TrainService;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ import java.util.List;
 @Service("TrainService")
 public class TrainServiceImpl implements TrainService {
 
-    private static final String PATH_API_TRAIN = "http://localhost:8080/api/train/";
+    private static final String PATH_API_TRAIN = "http://localhost:8082/api/train/";
 
     @Override
     public List<TrainDTO> getRequestAllTrains() {

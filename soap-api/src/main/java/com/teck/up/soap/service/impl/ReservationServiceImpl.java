@@ -1,10 +1,10 @@
-package com.teck.up.soap.services.impl;
+package com.teck.up.soap.service.impl;
 
 import com.reseration.xml.AddReservationRequest;
 import com.reseration.xml.RemoveReservationRequest;
 import com.reseration.xml.UpdateReservationRequest;
 import com.teck.up.soap.UIModel.ReservationDTO;
-import com.teck.up.soap.services.ReservationService;
+import com.teck.up.soap.service.ReservationService;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import java.util.List;
 @Component("ReservationService")
 public class ReservationServiceImpl implements ReservationService {
 
-    private static final String PATH_API_TRAIN = "http://localhost:8080/api/reservation/";
+    private static final String PATH_API_TRAIN = "http://localhost:8082/api/reservation/";
     @Override
     public List<ReservationDTO> getRequestAllReservation() {
         RestTemplate restTemplate = new RestTemplate();

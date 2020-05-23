@@ -1,4 +1,4 @@
-package com.teck.up.soap.services;
+package com.teck.up.soap.service;
 
 import com.reseration.xml.AddTrainRequest;
 import com.reseration.xml.RemoveTrainRequest;

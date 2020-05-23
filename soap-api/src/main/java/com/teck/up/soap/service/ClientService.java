@@ -1,4 +1,4 @@
-package com.teck.up.soap.services;
+package com.teck.up.soap.service;
 
 import com.reseration.xml.AddClientRequest;
 import com.reseration.xml.RemoveClientRequest;
