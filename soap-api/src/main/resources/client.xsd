@@ -1,0 +1,85 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.reseration.com/xml"
+           targetNamespace="http://www.reseration.com/xml" elementFormDefault="qualified">
+
+    <xs:element name="ClientsRequest">
+        <xs:complexType>
+            <xs:sequence>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="RemoveClientRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ClientIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+
+    <xs:element name="AddClientRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nom" type="xs:string"/>
+                <xs:element name="prenom" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UpdateClientRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                <xs:element name="nom" type="xs:string"/>
+                <xs:element name="prenom" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ClientDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Clients" type="tns:Client"  maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Client">
+        <xs:sequence>
+            <xs:element name="id_client" type="xs:integer"/>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="prenom" type="xs:string"/>
+            <xs:element name="resevations" type="tns:Reservations" maxOccurs="unbounded" />
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Reservations">
+        <xs:sequence>
+            <xs:element name="id_reservation" type="xs:integer"/>
+
+            <xs:element name="train" type="tns:TrainReservation"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TrainReservation">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="V_depart" type="xs:string"/>
+            <xs:element name="V_arrive" type="xs:string"/>
+            <xs:element name="capacite" type="xs:integer"/>
+            <xs:element name="nbr_place_actuel" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

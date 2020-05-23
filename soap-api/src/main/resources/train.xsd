@@ -1,0 +1,90 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.reseration.com/xml"
+           targetNamespace="http://www.reseration.com/xml" elementFormDefault="qualified">
+
+    <xs:element name="TrainsRequest">
+        <xs:complexType>
+            <xs:sequence>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="RemoveTrainRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="TrainIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SearchedTrainRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                <xs:element name="V_depart" type="xs:string"/>
+                <xs:element name="V_arrive" type="xs:string"/>
+                <xs:element name="date_depart" type="xs:date"/>
+                <xs:element name="date_arrive" type="xs:date"/>
+                <xs:element name="capacite" type="xs:integer"/>
+                <xs:element name="nbr_place_actuel" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AddTrainRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                <xs:element name="V_depart" type="xs:string"/>
+                <xs:element name="V_arrive" type="xs:string"/>
+                <xs:element name="date_depart" type="xs:date"/>
+                <xs:element name="date_arrive" type="xs:date"/>
+                <xs:element name="capacite" type="xs:integer"/>
+                <xs:element name="nbr_place_actuel" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UpdateTrainRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                <xs:element name="V_depart" type="xs:string"/>
+                <xs:element name="V_arrive" type="xs:string"/>
+                <xs:element name="date_depart" type="xs:date"/>
+                <xs:element name="date_arrive" type="xs:date"/>
+                <xs:element name="capacite" type="xs:integer"/>
+                <xs:element name="nbr_place_actuel" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TrainDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Trains" type="tns:Train"  maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Train">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="V_depart" type="xs:string"/>
+            <xs:element name="V_arrive" type="xs:string"/>
+            <xs:element name="date_depart" type="xs:date"/>
+            <xs:element name="date_arrive" type="xs:date"/>
+            <xs:element name="capacite" type="xs:integer"/>
+            <xs:element name="nbr_place_actuel" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
